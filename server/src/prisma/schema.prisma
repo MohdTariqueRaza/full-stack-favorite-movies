@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Movie {
+  id        Int      @id @default(autoincrement())
+  title     String
+  type      String     // e.g., "Movie" or "Series"
+  director  String
+  actors    String     // Comma-separated list of actors
+  genre     String     // Comma-separated genres like "Action,Drama"
+  boxOffice   Decimal?
+  budget    Decimal
+  location  String
+  duration  String        // In minutes
+  year      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
