@@ -30,20 +30,58 @@ Install Full Stack Application with npm
 ### 🖥️ Frontend Setup
 
 ```bash
+  # Clone the repository
+  https://github.com/MohdTariqueRaza/full-stack-favorite-movies.git
+
+  # Navigate to frontend directory
   cd client
+
+  # Install dependencies
   npm install
+
+  # Start development server
   npm run dev
 ```
 
 ### 🔧 Backend Setup
 
 ```bash
+  # Navigate to backend directory
   cd server
+
+  # Install dependencies
   npm install
-  Create .env file with your credentials like DATABASE_URL="mysql://root:@localhost:3306/movies_db"
+
+  # Create .env file with your credentials
+  DATABASE_URL="mysql://root:@localhost:3306/movies_db"
+
   npx prisma generate --schema=src/prisma/schema.prisma
+
+  # Start the server
   npm run dev
 ```
+
+### Database Schema
+
+```bash
+CREATE TABLE `movie` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `director` varchar(255) NOT NULL,
+  `actors` text NOT NULL,
+  `genre` varchar(255) NOT NULL,
+  `boxOffice` decimal(15,2) NOT NULL,
+  `budget` decimal(15,2) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `duration` varchar(255) DEFAULT NULL,
+  `year` varchar(255) DEFAULT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+);
+
+```
+
 
 ### Seed sample data (optional)
 
