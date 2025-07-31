@@ -92,5 +92,5 @@ CREATE TABLE `movie` (
 
 The application is deployed and accessible at:
 
-- Full Stack : [https://full-stack-favorite-movies.netlify.app/](https://full-stack-favorite-movies.netlify.app/)
+- Full Stack Application : [https://full-stack-favorite-movies.netlify.app/](https://full-stack-favorite-movies.netlify.app/)
 
